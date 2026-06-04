@@ -1,0 +1,6 @@
+config,NA,orientation,anamorphic,NILS,CD_nm
+Conv_V,0.33,V,0,1.9224,16.5337
+Conv_H,0.33,H,0,1.9224,16.5337
+HiNA_V,0.55,V,1,2.1521,8.2749
+HiNA_H,0.55,H,1,1.8097,8.2749
+HV_asym_HiNA,0.55,H-V,1,17.2854,0.0000

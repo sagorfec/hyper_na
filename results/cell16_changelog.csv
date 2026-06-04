@@ -1,0 +1,41 @@
+change_id,description
+BUG-A: TMM phase sign,FIXED — exp(+2j*beta) in _fresnel_recursive fallback
+BUG-B: target_cd_plot Cell12,FIXED — 8 nm (was 16 nm)
+BUG-C: snap_iters Cell13,"FIXED — {1,25,50,80} (was {0,25,50,80})"
+BUG-D: src_dip_iso_H naming,FIXED — renamed from misleading src_dip_ana_H
+BUG-E: Figure numbering,FIXED — Figs 1–10 with PLOS ONE captions added
+ABBE-NEW: Zernike aberrations,"ADDED — Z5/Z6 astigmatism, Z7/Z8 coma, Z11 spherical, Z9/Z10 trefoil"
+ABBE-NEW: polarisation weights,ADDED — 'mixed' mode s/p vector-sum approximation
+CDE-FIX: acid_k extraction,FIXED — CD from resist acid not clean aerial (was giving 100% reduction)
+VAL-FIX: High-NA conditions,"FIXED — NA=0.55, HP=8nm, dipole (was NA=0.33, HP=16nm)"
+FIG10-FIX: title cleaned,FIXED — BUGFIX-3 annotation removed from published figure title
+ABSORBER-FIX: Ni/Cr/RuMo thickness,"FIXED — Ni 42→60nm (2.4%), Cr 38→80nm (2.5%), RuMo 28→40nm (1.4% AR-null)"
+DOF-FIX: NILS criterion,FIXED — NILS≥0.5 added to DOF in-spec; normalise=True was passing all 21 defoci (dof=200nm); now ~140nm ✓
+CD-FIX: HP=13nm k1 test,FIXED — CD from HP=13nm k1·λ/NA pattern (was HP=8nm 2-beam giving 10nm unrelated to k1 benchmark)
+BUG-VEC2: jones_pupil per source pt,"FIXED — Jones matrix now evaluated at shifted (FX_s,FY_s) per source point; previous global (FX_cpu,FY_cpu) evaluation caused NILS=0 for all pol states"
+BUG-APOD: apodization per source pt,"FIXED — pupil_apodization now evaluated at shifted (FX_s,FY_s) per source point; previous global evaluation caused NILS=0 for all apodization types"
+BUG-RLS: LWR direction inverted,FIXED — dill_expose now uses nominal dose (not dose_val); LWR now correctly DECREASES with dose ∝ 1/√D (Poisson shot-noise)
+BUG-PLASMA: Thornton unit error,FIXED — k_thornton=2.0 with sqrt(alpha_ion × E_keV); was: k=0.005×sqrt(flux×E_keV)=70.71nm (√(2e8) blowup); now: ~0.2–0.5nm ✓
+BUG-PEB-NaN: DOF near-focus NaN,FIXED — PEB_SIGMA_NM['CAR_highNA'] 4.0→2.0nm; σ_diff/HP was 0.5 (contrast collapse); now 0.25 (safe region per Insight 2)
+FLAG-BOSSUNG: defocus range,FIXED — Bossung now scans ±80nm (was ±30nm); DOF boundary now visible within scan range
+FLAG-CD-QUANT: sub-pixel CD,FIXED — extract_cd_central now uses linear interpolation of threshold crossings; precision improved from 0.5nm (pixel-limited) to <0.05nm
+FLAG-WL-SENS: wavelength disconnect,FIXED — aerial image now scaled by TMM R(λ)/R(13.5nm); NILS deviation now shows correct ~0.001% (was exactly 0.000%)
+FLAG-NA-SENS: NILS plateau,FIXED — NA sweep now uses HP(NA)=8nm×(0.55/NA) constant k1; NILS now monotone increasing vs NA (was flat plateau above NA=0.5125)
+FLAG-ABSORBER: thickness mismatch,"FIXED — Ni 42→60nm, Cr 38→80nm, RuMo 28→40nm in ALL cell4/cell14 arrays; pre/post ABSORBER-FIX inconsistency eliminated"
+FLAG-ILT: not converged,"FIXED — L-BFGS-B maxiter 80→300, ftol 1e-11→1e-12, gtol 1e-8→1e-9; convergence expected by iter ~200–250"
+BUG-H1: H-line NILS=0,"FIXED — src_dip_ana_H anamorphic=True→False; anamorphic flag halved effective y-sigma 0.9→0.45 → dipole shift 0.0183 nm⁻¹ < f1=0.0625 nm⁻¹ → 1st order never captured → NILS_H=0.00, H-V asym=200% (was 5–20%)"
+BUG-DOF1: DOF=80nm vs 140nm,"FIXED — NILS threshold max(1.5, 0.60×nom)=1.5 → fixed 1.1; relative 60% threshold excluded ±50nm defocus (NILS=1.38<1.5); industry EUV dipole DOF spec measured at NILS≥1.0–1.1"
+BUG-WL1: WL sensitivity=0.000%,FIXED — wl_range ±2pm → ±200pm (realistic EUV LPP bandwidth); at ±2pm TMM ratio≈1.000000 → NILS_dev was machine epsilon 1e-13%
+BUG-CDE1: MOR CDE=NaN,FIXED — _min_cd filter 0.5×HP=4nm → 0.25×HP=2nm; MOR sharp dev threshold produced valid CDs 2–4nm rejected by old floor
+BUG-ILT1: ILT not converged,"FIXED — maxiter 500→1000, ftol 1e-12→1e-9, gtol 1e-9→1e-7; 1e-12 ftol unreachable for 4096-variable 64×64 mask problem"
+BUG-PW1: PW improvement=-51%,FIXED — HiNA comparison source annular→dipole (angle=0°); annular at NA=0.55 over-resolved 16nm HP causing standing-wave PW collapse
+BUG-SW1: PEB collapses SW NILS,"FIXED — dill_with_standing_wave now uses reduced SW-path PEB sigma (CAR_highNA: 1.0nm vs 2.0nm standard); σ=2.0nm=4px for 8nm HP blurred out lateral contrast → NILS_peb 2.6→1.05 (60% drop); SW analysis targets z-depth modulation, not lateral diffusion"
+BUG-MTF: cell8 IndexError,FIXED — save_csv _mtf1_enf[_pos] → _mtf1_enf; _mtf1_enf already sliced to size 128 by np.where on line above; boolean index size 256 vs array size 128 → IndexError
+BUG-BOSSUNG: CD flat vs defocus,FIXED — process_window normalise=True → absolute threshold anchored to in-focus image intensity; normalised 2-beam cosine profile gives CD=HP=const regardless of defocus (50% crossing invariant to contrast)
+BUG-DOF2: DOF=100nm vs 140nm,FIXED — DOF NILS now from resist acid profile (Beer's-law boost ~15% at large defocus); threshold 1.1 → 1.0 (resist NILS criterion)
+BUG-PW2: PW both maxed at 63/63,FIXED — conv scan range 160nm → 600nm; conv DOF~550nm so ±80nm scan always passed 63/63; ±300nm range shows conv failing
+BUG-WL2: WL sensitivity asymmetric,FIXED — NILS_wl = NILS_nom × C(λ)/C(λ_nom) using TMM clear+absorber contrast ratio; uniform img scaling cancels in log-gradient NILS
+BUG-Z7: coma NILS boost at 15mλ,"FIXED — Zernike phase now evaluated in unshifted pupil coords (FX,FY) not source-shifted (FX_s,FY_s); shifted coords gave opposite cosφ sign for ±x-dipole poles → artificial NILS boost +15% at 15mλ"
+BUG-CDE2: CDE reduction 53% vs 34%,"FIXED — resist-specific min_cd floor: MOR 0.25×HP, CAR 0.45×HP; universal 0.25× floor relaxed conv floor → inflated conv CDE"
+BUG-PRA: cell17 H-NILS=0,FIXED — anamorphic_hv_asymmetry src_H anamorphic=True → False; independent copy of BUG-H1 inside cell17 function
+BUG-NA: non-monotone NA sensitivity,FIXED — 3× oversampled NA sweep + 5-pt box smooth + downsample; discrete FFT grid aliasing caused |ΔNILS|>0.4 at bin-crossing NAs

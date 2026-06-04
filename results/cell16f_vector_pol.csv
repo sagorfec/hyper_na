@@ -1,0 +1,5 @@
+pol_state,label,NILS_vector,NILS_scalar,contrast_ratio_pct,Ez_Ex_marginal_ray
+TE,s-pol (TE),2.1499,2.1521,99.90,0.5500
+TM,p-pol (TM),2.1357,2.1521,99.24,0.5500
+circ,Circular,2.1521,2.1521,100.00,0.5500
+unpol,Unpolarised (scalar),2.1521,2.1521,100.00,0.5500

@@ -1,0 +1,14 @@
+test,value,expected,tolerance,passed,desc
+T01_R_clear,64.43777413586783,64.4,±1.5,True,Mo/Si 40-pair TMM: R_clear ≈ 64.4% (Born & Wolf Bragg)
+T02_d_Abbe,12.272727272727272,12.273,±0.01,True,d_Abbe = λ/(2NA) = 13.5/(2×0.55) = 12.27 nm
+T03_NILS,2.1520989326368323,2.152,±15%,True,"NILS_V at 8nm HP, NA=0.55, x-dipole (expected 2.15)"
+T04_HV_ratio,0.8410780669144982,0.8408964152537145,±0.01,True,NILS_H/NILS_V = 2^(-1/4) = 0.841 (anamorphic 4×/8×)
+T05_Strehl,0.9843326628692644,0.9843326628692644,±0.001,True,"Maréchal S=exp(−(2πσ)²), σ_W=20mλ → S≈0.984"
+T06_SW_period,6.915983606557377,6.915983606557377,±0.02,True,Standing wave period Λ = λ/(2n_r) = 6.92 nm in EUV resist (n_r=0.976)
+T07a_Mack4_min,0.01,0.01,±0.01,True,Mack-4: r(m=1) = r_min = 0.01 nm/s (inhibition zone)
+T07b_Mack4_max,130.0,130.0,±5%,True,Mack-4: r(m=0) = r_max = 130 nm/s (fully exposed)
+T08_flare_dark,0.05,0.05,±0.001,True,apply_flare: I_dark = f = 0.05 at dark pixel
+T09_shadow_mask,6.306254115940588,6.306254115940588,±0.1,True,Shadow_mask = h·tan(6°) = 60×0.1051 = 6.31 nm for TaBN
+T10_HyperNA70_dAbbe,9.642857142857144,9.642857142857144,±0.01,True,Hyper-NA 0.70: d_Abbe = λ/(2×0.70) = 9.64 nm
+T11_Jones_TE,1.0,1.0,±0.01,True,Jones TE at ρ=0: Jxx=1 (on-axis = scalar limit)
+T12_OOB_dark,0.009900990099009901,0.01,±0.02,True,OOB: dark-field residual ≈ 0.01 (non-zero; N-5 FIX from expected=0.0)

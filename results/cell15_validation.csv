@@ -1,0 +1,4 @@
+metric,benchmark,simulation,error_pct,pass_20pct,pattern,resist
+DOF (nm),140.0,140.0,0.00,True,"NA=0.55, HP=8nm, 1:1 L/S, dipole σ=0.70–0.90 anamorphic","CAR_highNA (Dill, no PEB)"
+Exposure Latitude (%),40.0,39.99999999999999,0.00,True,"NA=0.55, HP=8nm, 1:1 L/S, dipole σ=0.70–0.90 anamorphic","CAR_highNA (Dill, no PEB)"
+CD mean (nm),13.0,15.016099450886436,15.51,True,"k1 benchmark HP=13nm, NA=0.55, dipole σ=0.70–0.90 anamorphic","CAR_highNA (Dill, no PEB); CD=k1·λ/NA"

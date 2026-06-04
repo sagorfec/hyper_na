@@ -1,0 +1,4 @@
+resist,A_nm-1,B_nm-1,C_cm2_mJ,dose_nom_mJ,thick_nm
+CAR_standard,0.0042,0.0031,0.0667,30.0,30.0
+CAR_highNA,0.004,0.0028,0.082,20.0,20.0
+MOR_SnOx,0.0105,0.0062,0.12,12.0,25.0

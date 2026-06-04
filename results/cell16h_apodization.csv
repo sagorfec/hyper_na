@@ -1,0 +1,6 @@
+apod,label,NILS_focus,NILS_50nm_defocus
+none,No apod.,2.1521,1.3836
+natural,Natural (cos θ),2.1459,1.3814
+gaussian,Gaussian (α=2),1.9675,1.1713
+hanning,Hanning,0.8431,0.6433
+euv_mirror,EUV mirror,2.1507,1.3831

@@ -1,0 +1,17 @@
+insight,value
+HV_asym_factor,0.8409
+HV_NILS_V,2.1521
+HV_NILS_H_corrected,1.8097
+HV_gap_pct,17.29
+PSM_delta_phi_rad,2.0292
+PSM_NILS_boost_pct,-34.67
+PSM_transmittance,0.4661
+SW_contrast_r015,0.2934
+Strehl_Z7_002lam,0.9843
+NILS_penalty_Z7_pct,-8.44
+CAR_median_CD_nm,9.640
+CAR_3sigma_CD_nm,1.162
+CAR_mean_entropy_bits,15.780
+MOR_median_CD_nm,8.786
+MOR_3sigma_CD_nm,1.038
+MOR_mean_entropy_bits,15.782

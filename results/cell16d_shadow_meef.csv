@@ -1,0 +1,5 @@
+absorber,h_abs_nm,shadow_mask_nm,shadow_wafer_scan_nm,shadow_wafer_xscan_nm,CD_bias_pct
+TaBN,60,6.306,1.577,0.788,19.7
+Ni,60,6.306,1.577,0.788,19.7
+Cr,80,8.408,2.102,1.051,26.3
+RuMo,40,4.204,1.051,0.526,13.1
