@@ -27,7 +27,7 @@ All results in the paper can be reproduced by running the scripts in order.
   title   = {Physical Mechanisms and Fundamental Limits of High-NA EUV Lithography: 
   A Multi-Physics Simulation Framework at the 8\,nm Half-Pitch Node},
   author  = { Md. Ifthakhar Khan Sagor, Md. Sanawar Hossain, Md. Zillur Rahaman, Partha Mandal, Anit Barua},
-  journal = {Elsevier},
+  journal = {PLOS One},
   year    = {2026},
   note    = {Under review}
 }
